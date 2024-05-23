@@ -1,0 +1,121 @@
+** Need to revisit from Spilitator in Stream chapter
+
+
+List<> list = new ArrayList<Integer>(); // DOES NOT COMPILE
+
+- public boolean add(E element)
+- public boolean contains(Object object)
+
+
+
+** Classes that implement the equals method in java
+- String, wrapper classes
+- Collection Framework
+
+- LinkedList is that it implements both the List and Deque
+- we ca use Dequeue as Stack(ArrayDequeue)
+- System.out.println(map.contains("lion")); // DOES NOT COMPILE
+- containsKey, containsValue
+
+
+var byWeight = new Comparator<Duck>() { // DOES NOT COMPILE
+public int compareTo(Duck d1, Duck d2) {
+return d1.getWeight()-d2.
+getWeight();}};
+
+- List<String> cannot be assigned to List<Object>.
+
+- ArrayList<Number> list = new ArrayList<Integer>(); // DOES NOT COMPILE
+
+- 25: Stream<String> fromListParallel = list.parallelStream();
+11: Stream<String> empty = Stream.empty(); // count = 0
+12: Stream<Integer> singleElement = Stream.of(1); // count = 1
+13: Stream<Integer> fromArray = Stream.of(1, 2, 3); // count = 3
+
+Stream<Integer> s = Stream.of(1);
+for (Integer i : s) {} // DOES NOT COMPILE
+
+
+- throw RuntimeException(); // DOES NOT COMPILE
+- # Omit position if no digit exists for it. $2.2
+- 0 Put 0 in position if no digit exists for it.
+12: double d = 1234.567;
+13: NumberFormat f1 = new DecimalFormat("###,###,###.0");
+14: System.out.println(f1.format(d)); // 1,234.6
+- LocalDate does not have timezone
+- y(year), M(month), d(Day)
+- a(AM/PM), z(time zone name), Z(timezone offset)
+
+
+*******************
+- Resource bundle will lock to the local them the language without country then to the default
+- in Properties class get(key) has no default value
+- getProperty(key, default) will return default if the key not exists
+
+
+*****************************
+-
+- jar -cvf mods/zoo.animal.care.jar -C care/ .
+- unnamed package not allowed in module
+--module-path == -p (used when compiling and running the application)
+--module      == -m (used when running the application)
+-d output directory
+to run your modular application
+java --module-path mods --module book.module/com.sybex.OCP
+jar -cvf mods/zoo.animal.feeding.jar -C feeding/ .
+
+open module zoo.animal.talks {
+opens zoo.animal.talks.schedule; // DOES NOT COMPILE
+}
+
+provides zoo.tours.api.Tour with zoo.tours.agency.TourImpl
+
+
+exports package;
+exports package to module;
+requires module;
+requires transitive module;
+opens package;
+opens package to module;
+provides serviceInterface with implName;
+uses serviceInterface; References service
+
+available modules in java
+- java.base
+- java.logging
+- java.desktop
+- java.sql
+- java.xml
+
+java --list-modules to list all modules
+jdeps zoo.dino.jar   to describe the module
+********************************************************
+Switch cases
+- only type (:) or (->) used t=in the cases
+
+- when we used the case with : and not found match and go to the default will take it and move down
+- when we used -> will get the default only
+
+************************
+JDBC
+- requires java.sql;
+- that the port is optional
+- executeQuery()  return result set
+- execute()       return true if the result is resultSet, else return false
+- executeUpdate() return int value indicate the number of updated rows.
+
+- conn.prepareStatement(query)
+- var result = ps.executeUpdate(); on select will throw exception at runtime
+- ps.executeQuery(); with update and delete will execute the throw exception
+
+- you can only use savepoints when you are controlling the transaction(using autocommit false)
+- Cannot establish a savepoint in auto-commit mode.
+
+******************************
+- ceil and floor takes double and return double
+- max, min takes all and return all
+- round() take double return long, takes float return int
+- pow takes double and returns double
+- Math.random() return value <0 and less than < 1
+- LocalDateTime of(int year, int month,int dayOfMonth, int hour, int minute, int second, int nanos)
+-
