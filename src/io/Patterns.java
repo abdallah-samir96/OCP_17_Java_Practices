@@ -11,5 +11,9 @@ public class Patterns {
                 .build();
 
         System.out.println(userInfo);
+
+        System.getProperties().forEach((k, v)->{
+            System.out.println(k + "="  + v);
+        });
     }
 }
