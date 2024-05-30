@@ -1,5 +1,9 @@
 package lambda;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 
 record UserInfo(String name, String email) {
@@ -33,9 +37,9 @@ public class App {
     private int data;
     public static void main(String[] args) {
         System.out.println(new UserInfo("Abdallah", "abdallahsameer22@gmail.com"));
-
-
-
+        System.out.println("Date now : " +
+                new SimpleDateFormat("ddMMyyyy")
+                .format(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant())));
         System.out.println("Lambda Final or effectively Final!!!");
         new App().checkLambda();
     }
