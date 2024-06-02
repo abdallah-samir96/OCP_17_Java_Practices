@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 record UserInfo(String name, String email) {
 
@@ -41,7 +43,23 @@ public class App {
                 new SimpleDateFormat("ddMMyyyy")
                 .format(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant())));
         System.out.println("Lambda Final or effectively Final!!!");
-        new App().checkLambda();
+        //new App().checkLambda();
+        // will throw exception in runtime
+        Set<UserInfo> set = new TreeSet<>(Set.of(new UserInfo("","")));
+        System.out.println(set);
+        compareEquals();
+    }
+    private static void compareEquals() {
+        List<Integer> list1 = List.of(1,2,3);
+        List<Integer> list2 = List.of(1,2,3);
+        Set<Integer> set1 = Set.of(1,2,3);
+        Set<Integer> set2 = Set.of(1,3,2);
+        System.out.println("Lists Equality ");
+        System.out.println(list1 == list2);
+        System.out.println(list1.equals(list2));
+        System.out.println("Sets");
+        System.out.println(set1 == set2);
+        System.out.println(set1.equals(set2));
     }
     private void checkLambda() {
         int anotherData = 0;
