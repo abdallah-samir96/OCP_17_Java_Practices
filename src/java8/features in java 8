@@ -1,0 +1,11 @@
+- ***Day One
+- INTRODUCTION TO COMPUTERS, PROGRAMS, AND JAVA
+
+- RAM (Random Access Memory) is referred to as "random access" because it allows data to be read and written in any order,
+  rather than sequentially.
+- The application program interface (API), also known as library, contains predefined
+  classes and interfaces for developing Java programs.
+
+- We have Syntax error, runtime Error, Logical Error
+- Logic errors occur when a program does not perform the way it was intended to.
+
