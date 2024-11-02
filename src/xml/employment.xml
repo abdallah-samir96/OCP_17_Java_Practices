@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<library
+        xmlns="http://www.abdallah.com"
+        xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation = "http://www.abdallah.com employment.xsd"
+        location="cairo-egypt"
+        code="74747"
+>
+
+    <book>
+        <title>introduction to c++</title>
+        <pages>2000</pages>
+        <author>Bjarne Stroustrup</author>
+    </book>
+
+    <book>
+        <title>Java programing</title>
+        <pages>5000</pages>
+        <author>James Gosling</author>
+    </book>
+
+    <book>
+        <title>Introduction to network</title>
+        <pages>400</pages>
+        <author>Simple name</author>
+    </book>
+
+</library>
