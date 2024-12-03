@@ -4,28 +4,23 @@ xmlns="http://www.abdallah.com"
         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation = "http://www.abdallah.com library.xsd"
         -->
-<library
-
->
+<library>
     <book>
         <title>introduction to c++</title>
         <pages>2000</pages>
         <author>Bjarne Stroustrup</author>
         <type>COMPUTER_SCIENCE</type>
     </book>
-
     <book>
         <title>Java programing</title>
         <pages>5000</pages>
         <author>James Gosling</author>
         <type>COMPUTER_SCIENCE</type>
     </book>
-
     <book>
         <title>Introduction to network</title>
         <pages>400</pages>
         <author>Any one</author>
         <type>COMPUTER_SCIENCE</type>
     </book>
-
 </library>

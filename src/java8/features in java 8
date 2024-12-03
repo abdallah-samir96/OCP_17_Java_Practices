@@ -9,3 +9,13 @@
 - We have Syntax error, runtime Error, Logical Error
 - Logic errors occur when a program does not perform the way it was intended to.
 
+- *** Day 2
+- our mission is to solve problems by writing programs.
+- Identifiers are the names that identify the elements such as classes, methods, and
+  variables in a program.
+- An identifier is a sequence of characters that consists of letters, digits, underscores
+  (_), and dollar signs ($).
+- inner classes and anonymous will use $ in the compiled files.
+
+- An expression represents a computation involving values, variables, and operators that,
+  taking them together, evaluates to a value.

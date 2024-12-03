@@ -1,7 +1,5 @@
-import records.Student;
+import records.StudentRecord;
 
-import java.io.FileNotFoundException;
-import java.io.IOError;
 import java.io.IOException;
 import java.rmi.AccessException;
 import java.util.*;
@@ -37,12 +35,12 @@ public class Chapter9 {
          */
 
 
-        List<Student> list = new ArrayList<>();
-        list.add(new Student("A", "Z", 1));
-        list.add(new Student("A", "B", 1));
-        Comparator<Student> comparator = Comparator
-                .comparing(Student::name)
-                .thenComparing(Student::g)
+        List<StudentRecord> list = new ArrayList<>();
+        list.add(new StudentRecord("A", "Z", 1));
+        list.add(new StudentRecord("A", "B", 1));
+        Comparator<StudentRecord> comparator = Comparator
+                .comparing(StudentRecord::name)
+                .thenComparing(StudentRecord::g)
                  .reversed();
 
         System.out.println(list);
@@ -52,7 +50,7 @@ public class Chapter9 {
 
 
 
-      Set<Student> set= new TreeSet<>(Comparator.comparing(Student::email));
+      Set<StudentRecord> set= new TreeSet<>(Comparator.comparing(StudentRecord::email));
 
 
 
