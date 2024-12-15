@@ -1,8 +1,8 @@
 package sessions.typeinference;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 public class App {
 
@@ -15,9 +15,16 @@ public class App {
          * Compiler Inference Based on Assigned Value.
          * Must Be Initialized at Declaration.
          * Does Not Allow null at Declaration.
-         * Could not be used it in multiple initialization.
          * Could not be used as class attributes, method parameters.
          * */
+
+
+
+        var c = (System.currentTimeMillis() > 1000)? "Good": 100;
+        c = 10.6;
+
+
+
 
 
     }
