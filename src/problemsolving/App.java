@@ -1,5 +1,10 @@
 package problemsolving;
 
+import java.io.InputStreamReader;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import java.util.*;
 
 public class App {
@@ -14,6 +19,10 @@ public class App {
         System.out.println("****======");
 
         System.out.println("Palindrome " + isPalindrome(new LinkedList<>(List.of('M','A','D','A','m'))));
+
+        String str = "A" + "B";
+        str += "C";
+
 
     }
 
