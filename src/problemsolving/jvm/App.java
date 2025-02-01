@@ -1,11 +1,9 @@
 package problemsolving.jvm;
 
 import java.io.IOException;
-import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Scanner;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class App {
@@ -17,6 +15,11 @@ public class App {
         //        System.gc();
 
         failSafe();
+
+
+        var map = new HashMap<String, String>();
+        map.put("Ahmed", "Ahmed");
+        System.out.println(map.get("Ahmed"));
     }
 
     /**
