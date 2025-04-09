@@ -10,9 +10,19 @@ object App {
         apply(list, ::println)
         println("--------------------------------------")
 
-
         val userData = UserData("", "", "123", LocalDate.now())
         println(userData)
+
+        println("-------------------------")
+        val numbers = listOf(1, 2, 3,100, 200, 300, 150, 170)
+        val ovenNumbers = numbers.filter() { it % 2 == 0 }
+        println(ovenNumbers)
+
+        println("--------------------")
+        val oddFunc = fun(x: Int) = x % 2 == 1
+        val oddNumbers = numbers.filter(oddFunc)
+        println(oddNumbers)
+
 
     }
 
