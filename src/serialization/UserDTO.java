@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class UserDTO implements Serializable {
     private final String name;
     private final String email;
-    private final String ssn;
+    private final transient String ssn;
 
     public UserDTO(String name, String email, String ssn) {
         this.name = name;

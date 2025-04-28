@@ -13,7 +13,7 @@ public class App {
         var bytes = Files.readAllBytes(Path.of("app.config"));
         var encodedText  = Base64.getEncoder().encodeToString(bytes);
         var decodedBytes = Base64.getDecoder().decode(encodedText);
-        new FileOutputStream("abdallah.config").write(decodedBytes);
+        new FileOutputStream("application.config").write(decodedBytes);
         System.out.println(encodedText);
         System.out.println(Arrays.toString(decodedBytes));
 //        System.out.println(Arrays.toString(bytes));
