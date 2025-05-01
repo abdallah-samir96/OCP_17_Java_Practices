@@ -1,0 +1,28 @@
+Encoding:  transforms data into another format using a scheme that is publicly available so that it can easily be reversed.
+It does not require a key as the only thing required to decode it is the algorithm that was used to encode it.
+Examples: ASCII, Unicode, URL Encoding, Base64
+
+Encryption: The purpose of encryption is to transform data in order to keep it secret from others
+using algorithms like (AES, Blowfish, RSA)
+
+
+Hashing:  serves the purpose of ensuring integrity,
+making it so that if something is changed you can know that it’s changed.
+- fixed-length string.
+- not reversable
+
+
+
+Obfuscation:
+The purpose of obfuscation is to make something harder to understand,
+usually for the purposes of making it more difficult to attack or to copy.
+
+One common use is the the obfuscation of source code so that it’s harder
+to replicate a given product if it is reverse engineered.
+
+Open Source Obfuscators in Java
+- ProGuard
+- Jode
+- JavaGuard
+- Jarg
+
