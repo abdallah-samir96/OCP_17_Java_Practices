@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 
 public class App {
+    private static final String FILE_NAME = "file.png";
     public static void main(String[] args) throws WriterException, IOException {
 
         String data = """
@@ -17,7 +18,7 @@ public class App {
                 """;
         BitMatrix bitMatrix =
                 new MultiFormatWriter().encode(data, BarcodeFormat.QR_CODE, 250, 250);
-        MatrixToImageWriter.writeToPath(bitMatrix, "png", Path.of("abdallah.png"));
+        MatrixToImageWriter.writeToPath(bitMatrix, "png", Path.of(FILE_NAME));
 
     }
 }
