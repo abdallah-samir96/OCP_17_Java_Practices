@@ -10,6 +10,7 @@ public class App {
 
     public static void money() {
 
+        // for representing money we can use BigDecimal or using integral values after mulitplication by 1000 or 10_000
         var num1 = new BigDecimal("80.2");
         var num2 = new BigDecimal("20.1");
         System.out.println(num1.add(num2));

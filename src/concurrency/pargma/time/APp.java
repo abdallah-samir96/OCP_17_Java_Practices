@@ -10,7 +10,7 @@ public class APp {
 
     static void datetime() {
         // string datetime without timezone
-        // Epoc time from 1-jan-1970
+        // Epoc time from 1-jan-1970 (timestamp)
 
         System.out.println(Clock.systemUTC());
         System.out.println(Clock.systemDefaultZone());
