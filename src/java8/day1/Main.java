@@ -13,7 +13,6 @@ public class Main {
         System.out.println(LocalDateTime.now().toInstant(ZoneOffset.UTC));
         System.out.println(Instant.now());
 
-//
         var notificationService = NotificationFactory.getNotificationService(NotificationType.EMAIL);
         notificationService.send(new MessageDTO("email", "hello from jms"));
     }
