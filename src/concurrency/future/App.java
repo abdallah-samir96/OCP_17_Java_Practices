@@ -24,6 +24,45 @@ public class App {
         System.out.println(future.join());
         System.out.println("After joining the future!!");
     }
+
+
+    private void handle(){
+
+
+
+        //
+         CompletableFuture<String> userFuture =
+                CompletableFuture.supplyAsync(() -> getUser());
+
+        CompletableFuture<String> ordersFuture =
+                CompletableFuture.supplyAsync(() -> getOrders());
+
+        CompletableFuture<String> result =
+                userFuture.thenCombine(ordersFuture,
+                        (user, orders) -> user + "\n" + orders);
+
+        System.out.println(result.join());
+           
+    }
+
+
+     static String getUser() {
+        sleep(2000);
+        return "User: Abdallah";
+    }
+
+    static String getOrders() {
+        sleep(1500);
+        return "Orders: Laptop, Mouse";
+    }
+
+    static void sleep(long millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
 
 record User(String name, String email) {
