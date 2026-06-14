@@ -17,7 +17,7 @@ public class App {
         System.out.println("Server is running now");
         while(true) {
             System.out.println("Time Is: " + Instant.now());
-            Thread.sleep(3000);
+            Thread.sleep(8000);
         }
 
     }
