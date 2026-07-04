@@ -11,6 +11,23 @@ import java.time.LocalDateTime;
 
 public class App {
     public static void main(String[] args) throws IOException, NotBoundException {
+
+        var registry = LocateRegistry.getRegistry(1000);
+        var service = registry.lookup("message_service");
+
+        if(service instanceof MessageService messageService){
+
+            messageService.send(new Message("Email", "Hello", LocalDateTime.now()));
+
+            var messages = messageService.getAll();
+            messages.forEach(System.out::println);
+        }
+
+
+
+    }
+
+    private static void handleFile()  throws IOException, NotBoundException {
         System.out.println("Starting to lookup the service");
         var fileData = "IMAGE1, 2, 3, 4".getBytes();
         var registry = LocateRegistry.getRegistry(1000);
