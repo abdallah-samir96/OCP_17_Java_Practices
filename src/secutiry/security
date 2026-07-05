@@ -1,17 +1,130 @@
-Encoding:  transforms data into another format using a scheme that is publicly available so that it can easily be reversed.
+Encoding:  transforms data into another format using a scheme that is publicly available so that
+it can easily be reversed.
 It does not require a key as the only thing required to decode it is the algorithm that was used to encode it.
-Examples: ASCII, Unicode, URL Encoding, Base64
+Examples: ASCII, Unicode, URL Encoding, Base64, UTF-8
 
-Encryption: The purpose of encryption is to transform data in order to keep it secret from others
-using algorithms like (AES, Blowfish, RSA)
+- It's not for security.
+-
 
+Encryption: The purpose of encryption is to transform data in order to keep it secret from others.
+
+Encryption hide information, only someone with proper key can recover it.
+                        Plain Text
+                        ↓
+                        Encryption
+                        ↓
+                        Cipher Text
+                        ↓
+                        Decryption
+                        ↓
+                        Plain Text
+
+Algorithms:
+1- Symmetric Encryption: Using the same key for encryption and decryption
+    AES (standard today)
+    DES (obsolete)
+    3DES (legacy)
+    ChaCha20
+2- Asymmetric Encryption: 2 keys
+                Public Key
+                ↓
+                Encrypt
+                ↓
+                Private Key
+                ↓
+                Decrypt
+
+  RSA
+  ECC (Elliptic Curve Cryptography)
+
+used in HTTPS key exchange, SSH, Email Encryption using tls.
+
+**********************************************************************************
 
 Hashing:  serves the purpose of ensuring integrity,
 making it so that if something is changed you can know that it’s changed.
-- fixed-length string.
-- not reversable
+
+Usage
+* Password Storage
+* File integrity
+* Commits in GIT is hashed
+
+- fixed-size fingerprint string.
+- it's one way, not reversible.
+
+Algorithms
+- SHA-256
+- SHA-512
+- Argon2 (recommended for passwords)
+- PBKDF2
+- Bcrypt
+
+***********************************************
+Signing is the process (or concept).
+Digital Signature is the cryptographic result of that process.
+
+* Encryption only hide the content of something.
+* A digital signature provides three guarantees:
+    - Authentication: confirm who signed the message.
+    - Integrity: Message has not changed.
+
+Signature does not hide the content unless you encrypt it, so any one can read.
+it proves: who signed the document, the document not modified(integrity).
 
 
+you need to send the message alongside the signature.
+- The signature guarantee Authenticity, Integrity
+Signing Process:
+Message -> hashing(Sha-256) -> sign with private key -> signature.
+sending the signature with message.
+
+- Verifying Process
+Message -> Hashing(SHA-256) -> Verify the Hash with public key & compare with signature.
+
+                 Alice
+                   │
+                   ▼
+             Message
+                   │
+                   ▼
+             SHA-256 Hash
+                   │
+                   ▼
+        Sign with Private Key
+                   │
+                   ▼
+        ┌────────────────────┐
+        │ Message + Signature│
+        └────────────────────┘
+                   │
+          ───────────────────►
+                   │
+                   ▼
+                  Bob
+                   │
+        Hash the received message
+                   │
+                   ▼
+      Verify signature using Alice's
+             public key
+                   │
+                   ▼
+      Signature valid?
+          │              │
+         Yes            No
+          │              │
+          ▼              ▼
+   ✓ Authentic      ✗ Tampered,
+   ✓ Unchanged        wrong key,
+                      or invalid signature
+
+ A digital signature requires:
+     Private Key → Sign
+     Public Key → Verify
+ Encryption requires: public to encrypt, private to decrypt.
+
+
+***********************************************
 
 Obfuscation:
 The purpose of obfuscation is to make something harder to understand,
