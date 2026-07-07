@@ -2,7 +2,6 @@ package secutiry.jwt;
 
 import java.security.*;
 import java.util.Base64;
-import java.util.HexFormat;
 import java.util.Map;
 
 public class JwtGenerator {
@@ -10,6 +9,7 @@ public class JwtGenerator {
     private static final PrivateKey privateKey;
     private static final PublicKey publicKey;
     private final static int KEY_SIZE = 2048;
+    private final static String SIGNING_ALGORITHM = "SHA256WITHRSA";
 
     static {
 
@@ -21,6 +21,7 @@ public class JwtGenerator {
             publicKey = keyPair.getPublic();
             String encoded = Base64.getEncoder().encodeToString(publicKey.getEncoded());
 
+            // generating the public key in .pem file format
             var info = "-----BEGIN PUBLIC KEY-----\n"
                     + encoded
                     + "\n-----END PUBLIC KEY-----";
@@ -35,7 +36,7 @@ public class JwtGenerator {
         String header = "{\"alg\":\"RS256\",\"typ\":\"JWT\"}";
 
         var payload  = JsonUtil.toJson(claims);
-        var signatureService = Signature.getInstance("SHA256WITHRSA");
+        var signatureService = Signature.getInstance(SIGNING_ALGORITHM);
         var headerPayloadEncoding = JwtEncoder.base64UrlEncode(header.getBytes()) + "." + JwtEncoder.base64UrlEncode(payload.getBytes());
         signatureService.initSign(privateKey);
         signatureService.update(headerPayloadEncoding.getBytes());
@@ -44,7 +45,7 @@ public class JwtGenerator {
         return headerPayloadEncoding + "." + signature;
     }
     public static boolean verify(String jwt) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
-        var signatureService = Signature.getInstance("SHA256WITHRSA");
+        var signatureService = Signature.getInstance(SIGNING_ALGORITHM);
         signatureService.initVerify(publicKey);
 
         var jwtParties  = jwt.split("\\.");

@@ -16,6 +16,7 @@ public class App {
                 Map.entry("email", "abdallah@gmail.com")
         );
 
+        // generating token using SHA256RSA
         var jwt = JwtGenerator.generate(claims);
         System.out.println(jwt);
         System.out.println(JwtGenerator.verify(jwt));
