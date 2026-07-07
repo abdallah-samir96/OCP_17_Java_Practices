@@ -7,8 +7,8 @@ import java.util.HexFormat;
 
 public class DigitalSignature {
 
-    private static PrivateKey privateKey;
-    private static PublicKey publicKey;
+    private static final PrivateKey privateKey;
+    private static final PublicKey publicKey;
     private final static int KEY_SIZE = 1024;
 
     static {
