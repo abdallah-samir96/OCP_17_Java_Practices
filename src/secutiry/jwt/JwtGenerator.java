@@ -26,6 +26,7 @@ public class JwtGenerator {
                     + encoded
                     + "\n-----END PUBLIC KEY-----";
             System.out.println(info);
+
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
