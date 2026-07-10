@@ -1,0 +1,9 @@
+* its serialization technology.
+* you should create the schema then compile it on server, client.
+* schema based, the server and client should have the same .protobuf file.
+* you use the protoc compiler to compile the protobuf into your language.
+* GRPC->
+    - backend technology for communication like rest, soap, graphql.
+    - efficient
+    -
+*
