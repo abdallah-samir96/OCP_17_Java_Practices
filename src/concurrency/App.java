@@ -2,14 +2,18 @@ package concurrency;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class App {
+
 
 
     public static void main(String[] args) throws InterruptedException {
 
         System.out.println(Runtime.getRuntime().availableProcessors());
-
+        AtomicInteger atomicInteger = new AtomicInteger(100);
+        atomicInteger.addAndGet(10);
+        System.out.println(atomicInteger.get());
 
     }
 
