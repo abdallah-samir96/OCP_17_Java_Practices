@@ -1,0 +1,6 @@
+Singleton is a creational design pattern that lets you ensure that a class
+has only one instance, while providing a global access point to this instance.
+
+* we can avoid the reflection in class creation only after the first creation, but the first time is allowed.
+* The best solution for the singleton is the enum.
+* classes could not ensure the singleton.
