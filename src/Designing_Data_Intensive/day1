@@ -1,0 +1,11 @@
+* What are we trying to achieve when we build a system?
+    1- Reliable: ability of a system to perform its intended functions correctly and consistently over time, even under expected or stressful conditions.
+    2- Scalable: ability to deal with heavy traffic and adapt with the high traffic.
+    3- Maintainability: Ability to add new features, edit existing features without facing any complexity.
+
+* Types of Scaling
+    1- Scaling Up(Vertical Scaling).
+    2- Scaling Out (Horizontal).
+
+
+
