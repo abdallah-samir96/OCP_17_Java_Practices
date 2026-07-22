@@ -1,0 +1,13 @@
+Data Modeling
+    - Data structure, Objects -> Json, XML, Tables, Graphs -> Bytes, Files.
+
+Any App is dealing with data and we have different type of modeling
+    - SQL -> Relational (Rows, Columns), support transactions processing, patch processing.
+    - NO-SQL -> Schema less, sharded by default, Json Modeling
+
+
+
+* A database transaction is a group of database operations that must be treated as a single unit:
+either all operations succeed, or all are undone.
+
+* SELECT can be part of a transaction, but a SELECT statement alone is not necessarily what we mean by a transaction

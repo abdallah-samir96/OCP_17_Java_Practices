@@ -1,0 +1,33 @@
+What is the difference between JDK, JRE, and JVM?
+JDK
+ ├── Development Tools (javac, debugger)
+ └── JRE
+      ├── JVM
+      └── Java Libraries
+
+JVM: Executes Java bytecode.
+JRE: JVM + libraries required to run Java applications.
+JDK: JRE + development tools required to develop Java applications.
+*************************************************************************
+Java has 8 primitive Data types(byte, short, char, int, long, float, double, boolean)
+*************************************************************************
+What are the four pillars of OOP?
+Encapsulation, Inheritance, Polymorphism, Abstraction
+*************************************************************************
+Overloading: Same method name, different parameters(This is compile-time polymorphism.).
+Overriding: Child class provides a new implementation(runtime polymorphism.).
+*************************************************************************
+List: Ordered and Allows duplicates.
+Set: Does not allow duplicates.
+Map: Stores key-value pairs.
+*************************************************************************
+
+*************************************************************************
+*************************************************************************
+*************************************************************************
+*************************************************************************
+*************************************************************************
+*************************************************************************
+*************************************************************************
+*************************************************************************
+*************************************************************************
