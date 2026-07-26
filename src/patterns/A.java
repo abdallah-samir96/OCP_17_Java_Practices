@@ -3,7 +3,7 @@ package patterns;
 import java.time.LocalDateTime;
 
 public class A  implements Cloneable{
-    class Test{
+    static class Test{
         public int x;
         public int y;
 
@@ -20,7 +20,7 @@ public class A  implements Cloneable{
                     '}';
         }
     }
-    public Test test = new Test(1,2);
+    protected Test test;
     private String name;
     private LocalDateTime dateTime;
 
@@ -36,8 +36,9 @@ public class A  implements Cloneable{
         this.stringBuilder = stringBuilder;
     }
 
-    public A(String name, LocalDateTime dateTime, int clazz, StringBuilder stringBuilder) {
+    public A(Test test,String name, LocalDateTime dateTime, int clazz, StringBuilder stringBuilder) {
         this.name = name;
+        this.test = test;
         this.dateTime = dateTime;
         this.clazz = clazz;
         this.stringBuilder = stringBuilder;
