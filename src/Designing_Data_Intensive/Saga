@@ -1,0 +1,41 @@
+- A transaction represents a unit of work, which can include multiple operations
+- A command encapsulates all information needed to perform an action or trigger a subsequent event.
+
+Transactions must adhere to the principles of atomicity, consistency, isolation, and durability (ACID).
+    Atomicity: All operations succeed or no operations succeed.
+    Consistency: Data transitions from one valid state to another valid state.
+    Isolation: Concurrent transactions yield the same results as sequential transactions.
+    Durability: Changes persist after they're committed, even when failures occur.
+
+
+Microservices architectures typically assign a dedicated database to each microservice.
+
+This approach provides several benefits:
+    - Each service encapsulates its own data.
+    - Each service can use the most suitable database technology and schema for its specific needs.
+    - Databases for each service can be scaled independently.
+    - Failures in one service are isolated from other services.
+
+
+* The Saga pattern manages transactions by breaking them into a sequence of local transactions.
+
+* Saga implementation approaches
+    - Choreography
+    - Orchestration
+
+* Choreography:
+    - In the choreography approach, services exchange events without a centralized controller.
+    - Services communicate using events.
+    - With choreography, each local transaction publishes domain events that trigger local transactions in other services.
+Advantages
+    - No central coordinator
+    - Services are loosely coupled
+    - Good for simple workflows
+    - Natural event-driven architecture
+
+* Orchestration:
+    In orchestration, a centralized controller, or orchestrator,
+    handles all the transactions and tells the participants which operation to perform based on events.
+
+
+A Saga does not perform a traditional rollback. It performs new transactions that semantically undo previous operations.

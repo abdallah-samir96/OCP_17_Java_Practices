@@ -1,0 +1,13 @@
+DataBase Indexes:
+    - Hash Index (using hash function)
+    -
+
+There are 2 families of storage engines:
+    1- log(append only) structured -> This is only append only, there is no editing.
+    2- page oriented.
+
+
+Data Fragment: Meaning the data is not near to each other, it's separated on the disk.
+
+
+

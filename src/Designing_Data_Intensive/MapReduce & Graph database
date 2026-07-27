@@ -1,0 +1,37 @@
+
+
+
+
+
+
+
+ايه الفرق بين ال Hashing وال Digital Signature وايه علاقتهم بال JWT?
+
+ال Hashing معمول عشان يضمن حاجه واحده فقط وهي ال Integrity
+انا عاوز اضمن ان الدتا محصلش تغيير فيها ودا بيستخدم في حاجات كتير زي ال password hashing وال File Integrity وغيرهم
+Data -> Hash_Function -> Hash(Fixed Value)
+هنا انا معرفش مين اللي عمل ال Hash لان ممكن اي حد يستخدم ال Hash Algorithm ويطلع نفس ال Result من غير اي مشكله
+عشان كدا في ال Systems واحنا بنخزن ال Passwords بنستخدم حاجه اسمها ال Salt عشان نغير شكل ال Input وبالتالي النتيجيه بتاعه ال Hash هتختلف
+فيه Algorithms كتير بتعمل الموضوع دا زي Sha-256, Sha-512, Argon2, BCrypt وغيرهم
+في النهايه ال Hashing مش بيقولك مين اللي عمل ال Hash لكن بيضمن ان البيانات سليمه ومتعدلش فيها
+
+ثانيا ال Digital Signature
+هنا انا عاوز اضمن نقطتين مهمين هما ال Integrity ودا معناه ان الدتا متعدلش فيها وفي نفس الوقت اضمن ال Authenticity عشان اعرف مين اللي باعت الداتا
+هنا الموضوع مختلف شويه عن ال Hashing لان انا محتاج اعرف مين اللي باعت الداتا ودا بيخلينا نستخدم Private Key عشان نعمل Sign للداتا ونستخدم ال Public Key عشان نعمل Verify للداتا
+طبعا هنا فيه Algorithms زي RS256, ES256, PS256
+
+Data + Private Key → Digital Signature
+Data + Public Key + Digital Signature → Verify The Data(Integrity & Authenticity)
+
+ال JWT
+
+جزء ال Signature اللي موجود في ال JWT يعتبر Signing لان ال Identity Server like (Keycloak) بيستخدم ال Private Key عشان يعمل Sign لل Header + Payload وانت بتقدر عن طريق ال Public Key تعمل Verify لل Signature
+اوقات بستعمل Algorithm بيستخدم نفس ال Key عشان يعمل Sign & Verify وفيه اوقات بنستخدم Different Keys عشان نعمل Sign & Verify
+نقدر نستعمل Algorithms زي HMAC-SHA256, RS256
+ودا الفرق مابينهم ببساطه
+شكراا
+
+***********************
+ايه الفرق بين ال Hashing وال Digital Signature وايه علاقتهم بال JWT
+
+****
