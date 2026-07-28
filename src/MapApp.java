@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Abdallah {
+public class MapApp {
     public static void main(String[] args) {
 
         Map<Integer, Integer> map = new HashMap<>();
