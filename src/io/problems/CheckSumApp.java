@@ -1,5 +1,6 @@
 package io.problems;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CheckSumApp {
@@ -9,9 +10,10 @@ public class CheckSumApp {
      *
      * @apiNote The List is sorted
      * Complexity is O(N)
+     * here we return the indexes of matched sum!!!
      */
-    public static boolean searchSum(List<Integer> list, int searchedValue) {
-        boolean isFound = false;
+    public static List<Integer> searchSum(List<Integer> list, int searchedValue) {
+        List<Integer> matchedIndexes = new ArrayList<>();
         int head = 0;
         int tail = list.size() - 1;
         while (head < tail) {
@@ -21,10 +23,10 @@ public class CheckSumApp {
             } else if (result < searchedValue) {
                 head++;
             } else {
-                isFound = true;
+                matchedIndexes.addAll(List.of(head, tail));
                 break;
             }
         }
-        return isFound;
+        return matchedIndexes;
     }
 }
