@@ -15,7 +15,7 @@ public class SimpleApplication {
         System.out.println(list);
         var reader = new BufferedReader(new InputStreamReader(System.in));
         try {
-            System.out.print("Please Insert An Integral Number : " );
+            System.out.print("Please  Insert An Integral Number : " );
             int searchedValue = Integer.parseInt(reader.readLine());
             boolean isFound = CheckSumApp.searchSum(list, searchedValue);
             if (isFound) {
