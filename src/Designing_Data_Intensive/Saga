@@ -20,8 +20,8 @@ This approach provides several benefits:
 * The Saga pattern manages transactions by breaking them into a sequence of local transactions.
 
 * Saga implementation approaches
-    - Choreography
-    - Orchestration
+    - Choreography(event Driven): There are limitation when the number of events increased(20 services)
+    - Orchestration(using central coordinator)
 
 * Choreography:
     - In the choreography approach, services exchange events without a centralized controller.
@@ -39,3 +39,17 @@ Advantages
 
 
 A Saga does not perform a traditional rollback. It performs new transactions that semantically undo previous operations.
+
+
+** Orchestration Strategy in Saga
+    Client
+
+      |
+
+    Saga Orchestrator
+
+  /        |         \
+
+Order   Inventory   Payment
+
+- Services never communicate directly.
