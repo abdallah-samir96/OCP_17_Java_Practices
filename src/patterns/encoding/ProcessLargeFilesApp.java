@@ -5,19 +5,23 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class ProcessLargeFilesApp {
+    private static final String SOURCE_PATH = "large_file.app";
+    private static final String TARGET_PATH = "target_large_file.app";
+    private static final short BUFFER_SIZE = 1024;
     public static void main(String[] args) throws IOException {
 
-        var filePath = Path.of("large_file.app");
-        var targetFilePath = Path.of("target_large_file.app");
-        if (Files.notExists(targetFilePath)) {
+        var sourcePath = Path.of(SOURCE_PATH);
+        var targetPath = Path.of(TARGET_PATH);
+
+        if (Files.notExists(targetPath)) {
             System.out.println("Trying to create the File!!");
-            Files.createFile(targetFilePath);
+            Files.createFile(targetPath);
         }
 
-        byte[] buffer = new byte[1024]; // 1KB
+        byte[] buffer = new byte[BUFFER_SIZE];
         try (
-                var is = new BufferedInputStream(new FileInputStream(filePath.toFile()));
-                var os = new BufferedOutputStream(new FileOutputStream(targetFilePath.toFile()))
+                var is = new BufferedInputStream(new FileInputStream(sourcePath.toFile()));
+                var os = new BufferedOutputStream(new FileOutputStream(targetPath.toFile()))
         ) {
             var iteration = 1;
             int readBytes;
@@ -27,5 +31,6 @@ public class ProcessLargeFilesApp {
                 os.write(buffer, 0, readBytes);
             }
         }
+        System.out.println("Writing Into the file has been finished!!!!!");
     }
 }
